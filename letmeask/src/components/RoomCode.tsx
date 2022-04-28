@@ -21,4 +21,5 @@ export function RoomCode(props: RoomCodeProps){
             <span>Sala #{props.code}</span>
         </button>
     )
+   
 }
