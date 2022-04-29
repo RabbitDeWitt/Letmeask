@@ -8,8 +8,9 @@ import googleIconImg from '../assets/images/google-icon.svg'
 
 import { database } from '../services/firebase';
 
-import '../styles/auth.scss'
 import { Button } from '../components/Button'
+
+import '../styles/auth.scss'
 
 
 export function Home(){
@@ -34,6 +35,12 @@ export function Home(){
             alert('Room does not exists.');
             return;
         }
+
+        if (roomRef.val().closedAt){
+            alert('Room already closed');
+            return;
+        }
+
         navigate(`/rooms/${roomCode}`)
     }
 
